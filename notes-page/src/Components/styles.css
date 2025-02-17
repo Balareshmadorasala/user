@@ -1,0 +1,126 @@
+/* Container Styling */
+.container {
+  margin-top: 20px;
+}
+
+/* Button container aligned to the right */
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+/* Center the table */
+.table-container {
+  width: 100%;
+  font-weight: bold;
+}
+
+/* Make table scrollable on small screens */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Dark table header */
+.table-dark th {
+  background-color: #343a40;
+  color: white;
+  font-weight: bold;
+}
+
+/* Delete button styling */
+.delete-btn {
+  color: white;
+  background-color: red;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: darkred;
+}
+
+/* Pagination Styling */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+  padding-bottom: 10px;
+}
+
+.pagination-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.pagination-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.active-page {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+/* Modal Title */
+.modal-title {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+}
+/* General Form Styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+/* Mobile Responsive Form: Left-Right Layout */
+@media screen and (max-width: 576px) {
+  .form-group {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .form-group label {
+    width: 40%;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 55%;
+  }
+}
+
