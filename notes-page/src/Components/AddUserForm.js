@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal, Form, Table, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles.css"; // Import CSS file
+import "./styles.css"; // Updated CSS file
 
 const AddUserForm = () => {
   const [show, setShow] = useState(false);
@@ -52,7 +52,7 @@ const AddUserForm = () => {
   return (
     <div className="container mt-4">
       {/* Right-Aligned Add User Button */}
-      <div className="button-container">
+      <div className="button-wrapper">
         <Button variant="danger" onClick={handleShow}>
           Add User
         </Button>
@@ -60,10 +60,10 @@ const AddUserForm = () => {
 
       {/* Show Table Only When Users Exist */}
       {users.length > 0 && (
-        <div className="table-container">
+        <div className="table-wrapper">
           <div className="table-responsive"> {/* Responsive Table Wrapper */}
             <Table bordered hover className="mt-3 text-center">
-              <thead className="table-dark">
+              <thead className="table-header">
                 <tr>
                   <th>Name</th>
                   <th>Email</th>
@@ -81,7 +81,7 @@ const AddUserForm = () => {
                     <td>{user.role}</td>
                     <td>
                       <button
-                        className="delete-btn"
+                        className="delete-button"
                         onClick={() => handleDelete(indexOfFirstUser + index)}
                       >
                         Delete
@@ -94,21 +94,21 @@ const AddUserForm = () => {
           </div>
 
           {/* Pagination Buttons */}
-          <div className="pagination-container">
+          <div className="pagination-wrapper">
             <button
               onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
-              className="pagination-btn"
+              className="pagination-button"
             >
               Previous
             </button>
 
-            <span className="active-page">{currentPage}</span>
+            <span className="current-page">{currentPage}</span>
 
             <button
               onClick={() => setCurrentPage((prev) => (prev < totalPages ? prev + 1 : prev))}
               disabled={currentPage >= totalPages}
-              className="pagination-btn"
+              className="pagination-button"
             >
               Next
             </button>
@@ -119,46 +119,46 @@ const AddUserForm = () => {
       {/* Modal Form */}
       <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton>
-          <Modal.Title className="modal-title">Add User</Modal.Title>
+          <Modal.Title className="modal-heading">Add User</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
             <Row>
               <Col md={6}>
-                <div className="form-group">
-                  <label>Name:</label>
-                  <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+                <div className="input-wrapper">
+                  <label className="input-label">Name:</label>
+                  <input type="text" name="name" value={formData.name} onChange={handleChange} className="text-input" required />
                 </div>
               </Col>
               <Col md={6}>
-                <div className="form-group">
-                  <label>Email:</label>
-                  <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-                </div>
-              </Col>
-            </Row>
-
-            <Row>
-              <Col md={6}>
-                <div className="form-group">
-                  <label>Contact:</label>
-                  <input type="text" name="contact" value={formData.contact} onChange={handleChange} required />
-                </div>
-              </Col>
-              <Col md={6}>
-                <div className="form-group">
-                  <label>Password:</label>
-                  <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+                <div className="input-wrapper">
+                  <label className="input-label">Email:</label>
+                  <input type="email" name="email" value={formData.email} onChange={handleChange} className="text-input" required />
                 </div>
               </Col>
             </Row>
 
             <Row>
               <Col md={6}>
-                <div className="form-group">
-                  <label>Role:</label>
-                  <select name="role" value={formData.role} onChange={handleChange}>
+                <div className="input-wrapper">
+                  <label className="input-label">Contact:</label>
+                  <input type="text" name="contact" value={formData.contact} onChange={handleChange} className="text-input" required />
+                </div>
+              </Col>
+              <Col md={6}>
+                <div className="input-wrapper">
+                  <label className="input-label">Password:</label>
+                  <input type="password" name="password" value={formData.password} onChange={handleChange} className="text-input" required />
+                </div>
+              </Col>
+            </Row>
+
+            <Row>
+              <Col md={6}>
+                <div className="input-wrapper">
+                  <label className="input-label">Role:</label>
+                  <select name="role" value={formData.role} onChange={handleChange} className="dropdown-select">
                     <option value="student">Student</option>
                     <option value="instructor">Instructor</option>
                   </select>
@@ -166,7 +166,7 @@ const AddUserForm = () => {
               </Col>
             </Row>
 
-            <div className="d-flex justify-content-center">
+            <div className="button-group">
               <Button variant="success" type="submit">
                 Submit
               </Button>
@@ -182,5 +182,6 @@ const AddUserForm = () => {
 };
 
 export default AddUserForm;
+
 
 

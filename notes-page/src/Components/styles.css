@@ -1,35 +1,32 @@
-/* Container Styling */
+/* General Container Styling */
 .container {
   margin-top: 20px;
 }
 
-/* Button container aligned to the right */
-.button-container {
+/* Right-Aligned Button */
+.button-wrapper {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 15px;
 }
 
-/* Center the table */
-.table-container {
+/* Table Styling */
+.table-wrapper {
   width: 100%;
-  font-weight: bold;
 }
 
-/* Make table scrollable on small screens */
 .table-responsive {
   overflow-x: auto;
 }
 
-/* Dark table header */
-.table-dark th {
+.table-header th {
   background-color: #343a40;
   color: white;
   font-weight: bold;
 }
 
-/* Delete button styling */
-.delete-btn {
+/* Delete Button */
+.delete-button {
   color: white;
   background-color: red;
   border: none;
@@ -38,12 +35,12 @@
   cursor: pointer;
 }
 
-.delete-btn:hover {
+.delete-button:hover {
   background-color: darkred;
 }
 
 /* Pagination Styling */
-.pagination-container {
+.pagination-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,7 +49,7 @@
   padding-bottom: 10px;
 }
 
-.pagination-btn {
+.pagination-button {
   background-color: #dc3545;
   color: white;
   border: none;
@@ -63,12 +60,12 @@
   margin: 0 5px;
 }
 
-.pagination-btn:disabled {
+.pagination-button:disabled {
   background-color: #6c757d;
   cursor: not-allowed;
 }
 
-.active-page {
+.current-page {
   background-color: #007bff;
   color: white;
   padding: 8px 20px;
@@ -77,50 +74,45 @@
   margin: 0 10px;
 }
 
-/* Modal Title */
-.modal-title {
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-  color: #007bff;
-}
-/* General Form Styling */
-.form-group {
+/* Form Input Fields */
+.input-wrapper {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
 }
 
-.form-group label {
+.input-label {
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-.form-group input,
-.form-group select {
+.text-input,
+.dropdown-select {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
 }
 
-/* Mobile Responsive Form: Left-Right Layout */
+/* 🟢 Mobile Responsive: Left-Right Layout for Small Screens */
 @media screen and (max-width: 576px) {
-  .form-group {
+  .input-wrapper {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
 
-  .form-group label {
+  .input-label {
     width: 40%;
     text-align: left;
     margin-bottom: 0;
   }
 
-  .form-group input,
-  .form-group select {
+  .text-input,
+  .dropdown-select {
     width: 55%;
   }
+
 }
+
 
